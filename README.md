@@ -14,6 +14,7 @@ Requisitos originais do projeto: [PROMPT_CLUBE_ASSINATURA_MARINS_CAFES.md](./PRO
 - **Tailwind CSS** — design tokens de cor/tipografia em [tailwind.config.ts](./tailwind.config.ts)
 - **Framer Motion** — único mecanismo de animação/scroll-reveal do projeto (ver seção Animações)
 - Fontes via `next/font/google`: **Fraunces** (serifada, títulos) e **Inter** (corpo)
+- **sharp** — otimização de imagem em produção para `next/image` (recomendado pelo próprio Next.js)
 
 Não há backend/banco de dados. Todo o estado da "assinatura em
 andamento" vive no navegador (`localStorage`), via React Context.
@@ -51,6 +52,11 @@ src/
 
   components/             # seções da home + navbar/footer/reveal/logo/coffee-visual
     checkout/              # order-summary, subscriber-form, payment-method-selector, processing-overlay
+
+public/
+  brand/logo-mark.png       # logo oficial recortada (marca "marins" + ponto dourado, sem tagline)
+  brand/logo.png             # logo oficial completa (com "Cafés especiais"), arquivo de referência
+  photos/                    # fotografia real de campanha/produto (ver seção Marca abaixo)
 
   context/
     subscription-context.tsx  # estado global da assinatura (plano, personalização, dados, pedido)
@@ -150,27 +156,60 @@ do Framer Motion).
 
 Definidos em [tailwind.config.ts](./tailwind.config.ts):
 
-- `coffee-*` (marrom café, 400→950), `cream-*` (creme/off-white),
+- `marine-*` (azul-marinho, 400→950), `cream-*` (creme/off-white),
   `gold-*` (dourado de destaque)
 - `font-serif` → Fraunces, `font-sans` → Inter
 - `ease-cinematic` → `cubic-bezier(0.16, 1, 0.3, 1)`, usado nas
   transições principais
 
+## Marca (logo, favicon e fotografia real)
+
+A paleta `marine-*`/`gold-*` foi extraída por amostragem de pixel de
+`imagens/logo.png` (fornecido pelo usuário): azul-marinho `#0c2944` e
+dourado `#d2a739`. Os tokens no Tailwind chamavam-se `coffee-*`
+(marrom) antes disso — foram renomeados para `marine-*` em todo o
+projeto para refletir a cor real da marca.
+
+Assets aplicados:
+
+- **Logo** ([src/components/logo.tsx](./src/components/logo.tsx)) —
+  usa `public/brand/logo-mark.png` (2000×570px, transparente, fornecido
+  em alta resolução pelo usuário — só a marca "marins" + ponto, sem a
+  tagline "Cafés especiais", para não ficar ilegível em tamanhos
+  pequenos de navbar). `tone="dark"` mostra as cores reais (fundos
+  claros: navbar rolada, footer, checkout/sucesso). `tone="light"`
+  aplica um filtro `brightness-0 invert` (silhueta branca, prática
+  padrão de "logo reversa" para fundo escuro) — usado só na navbar
+  transparente sobre o hero, onde a versão colorida não teria contraste
+  suficiente contra o fundo agora também azul-marinho.
+  `public/brand/logo-full.png` (2000×800px, com a tagline) também está
+  disponível para uma eventual seção/placement maior, mas ainda não é
+  usado em nenhum componente.
+- **Favicon** — `src/app/icon.png` (512×512px; convenção do App Router
+  do Next.js, gera as tags automaticamente, sem `<link>` manual).
+- **Fotografia real** — `public/photos/`, extraídas de
+  `imagens/Samuel.png`, `imagens/barbara.png` e o `.webp`. Em uso:
+  `marins-reserva-caramelo.png` no fundo do hero
+  ([src/components/hero.tsx](./src/components/hero.tsx)) e
+  `marins-reserva-frutas.png` no painel da seção de benefícios
+  ([src/components/benefits-section.tsx](./src/components/benefits-section.tsx)).
+  `marins-pacote-mesa.webp` foi copiada para `public/photos/` mas
+  ainda não está posicionada em nenhuma seção.
+- `src/components/coffee-visual.tsx` aceita uma prop `src` opcional —
+  com ela, renderiza a foto real; sem ela, mantém o placeholder em CSS
+  (útil para qualquer novo espaço de imagem que ainda não tenha foto).
+
+A pasta `imagens/` na raiz continua com os arquivos originais
+(intocados) como arquivo-fonte; o Next.js só serve arquivos estáticos
+a partir de `public/`, por isso as cópias foram feitas para lá.
+
 ## Pendências / próximos passos
 
-Itens que dependem de material real da Marins Cafés (hoje usam
-placeholders funcionais):
-
-- **Fotografia/vídeo real** — os blocos de imagem usam
-  `src/components/coffee-visual.tsx` (gradiente + textura em CSS).
-  Substituir por `next/image`/`<video>` real quando houver material.
-- **Logo em arquivo** — hoje é uma wordmark tipográfica
-  (`src/components/logo.tsx`). Trocar pelo arquivo oficial mantendo
-  espaçamento/proporção.
 - **Preços e benefícios dos planos** — confirmar valores finais em
   `src/data/plans.ts` (atualmente demonstrativos, conforme o prompt original).
 - **Links de rodapé** — redes sociais, política de privacidade e
   termos de uso em `src/components/footer.tsx` ainda apontam para `#`.
+- **`marins-pacote-mesa.webp`** — ainda não usada em nenhuma seção (ver acima).
 - **Integração real do Mercado Pago** — ver seção acima.
 
 ## Notas de segurança

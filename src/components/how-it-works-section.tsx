@@ -4,7 +4,7 @@ import { Reveal } from "./reveal";
 
 export function HowItWorksSection() {
   return (
-    <section id="como-funciona" className="bg-coffee-900 py-24 sm:py-32">
+    <section id="como-funciona" className="bg-marine-900 py-24 sm:py-32">
       <div className="mx-auto max-w-content px-6 sm:px-8 lg:px-10">
         <Reveal>
           <p className="text-center font-sans text-xs uppercase tracking-[0.35em] text-gold-400">
@@ -24,7 +24,7 @@ export function HowItWorksSection() {
           />
           {howItWorksSteps.map((step, index) => (
             <Reveal key={step.id} delay={index * 0.15} className="relative text-center sm:text-left">
-              <span className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-gold-400/40 bg-coffee-900 font-serif text-lg text-gold-400 sm:h-12 sm:w-12">
+              <span className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-gold-400/40 bg-marine-900 font-serif text-lg text-gold-400 sm:h-12 sm:w-12">
                 {step.number}
               </span>
               <h3 className="mt-6 font-serif text-xl text-cream-50">{step.title}</h3>

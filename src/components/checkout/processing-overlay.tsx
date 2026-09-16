@@ -7,7 +7,7 @@ export function ProcessingOverlay() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-[60] flex flex-col items-center justify-center gap-5 bg-coffee-950/95 px-6 text-center backdrop-blur-sm"
+      className="fixed inset-0 z-[60] flex flex-col items-center justify-center gap-5 bg-marine-950/95 px-6 text-center backdrop-blur-sm"
       role="status"
       aria-live="polite"
     >

@@ -29,18 +29,18 @@ export default function SuccessPage() {
   if (!order || !plan) {
     return (
       <div className="flex min-h-[60svh] items-center justify-center px-6 pt-32">
-        <p className="font-sans text-sm text-coffee-600">Redirecionando...</p>
+        <p className="font-sans text-sm text-marine-600">Redirecionando...</p>
       </div>
     );
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-coffee-950 px-6 py-32">
+    <div className="flex min-h-screen items-center justify-center bg-marine-950 px-6 py-32">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full max-w-lg rounded-3xl border border-cream-50/10 bg-coffee-900/60 p-8 text-center backdrop-blur sm:p-12"
+        className="w-full max-w-lg rounded-3xl border border-cream-50/10 bg-marine-900/60 p-8 text-center backdrop-blur sm:p-12"
       >
         <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-gold-400/40 text-2xl">
           ☕
@@ -53,7 +53,7 @@ export default function SuccessPage() {
           Sua assinatura foi registrada com sucesso.
         </p>
 
-        <dl className="mt-10 flex flex-col gap-4 rounded-2xl bg-coffee-950/50 p-6 text-left font-sans text-sm">
+        <dl className="mt-10 flex flex-col gap-4 rounded-2xl bg-marine-950/50 p-6 text-left font-sans text-sm">
           <div className="flex items-center justify-between">
             <dt className="text-cream-100/60">Plano</dt>
             <dd className="text-cream-50">
@@ -85,7 +85,7 @@ export default function SuccessPage() {
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <Link
             href="/"
-            className="rounded-full bg-cream-50 px-6 py-3 font-sans text-sm font-medium text-coffee-900 transition-transform duration-300 hover:-translate-y-0.5"
+            className="rounded-full bg-cream-50 px-6 py-3 font-sans text-sm font-medium text-marine-900 transition-transform duration-300 hover:-translate-y-0.5"
           >
             Voltar para o clube
           </Link>

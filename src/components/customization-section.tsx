@@ -12,12 +12,12 @@ export function CustomizationSection() {
     <section id="personalizar" className="bg-cream-50 py-24 sm:py-32">
       <div className="mx-auto max-w-content px-6 sm:px-8 lg:px-10">
         <Reveal>
-          <p className="text-center font-sans text-xs uppercase tracking-[0.35em] text-coffee-500">
+          <p className="text-center font-sans text-xs uppercase tracking-[0.35em] text-marine-500">
             Personalização
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="mx-auto mt-4 max-w-xl text-center font-serif text-3xl leading-tight text-coffee-900 sm:text-4xl md:text-5xl">
+          <h2 className="mx-auto mt-4 max-w-xl text-center font-serif text-3xl leading-tight text-marine-900 sm:text-4xl md:text-5xl">
             Conte para nós como você gosta do seu café
           </h2>
         </Reveal>
@@ -26,7 +26,7 @@ export function CustomizationSection() {
           {customizationQuestions.map((question, index) => (
             <Reveal key={question.id} delay={index * 0.1}>
               <fieldset>
-                <legend className="font-serif text-lg text-coffee-900">{question.question}</legend>
+                <legend className="font-serif text-lg text-marine-900">{question.question}</legend>
                 <div className="mt-4 flex flex-wrap gap-3">
                   {question.options.map((option) => {
                     const selected = customization[question.id] === option.id;
@@ -38,8 +38,8 @@ export function CustomizationSection() {
                         onClick={() => answerCustomization(question.id, option.id)}
                         className={`rounded-full border px-5 py-2.5 font-sans text-sm transition-colors duration-300 ${
                           selected
-                            ? "border-coffee-900 bg-coffee-900 text-cream-50"
-                            : "border-coffee-900/15 bg-white text-coffee-700 hover:border-coffee-900/40"
+                            ? "border-marine-900 bg-marine-900 text-cream-50"
+                            : "border-marine-900/15 bg-white text-marine-700 hover:border-marine-900/40"
                         }`}
                       >
                         {option.label}

@@ -10,7 +10,7 @@ export function CtaSection() {
   const { planId } = useSubscription();
 
   return (
-    <section className="relative overflow-hidden bg-coffee-950 py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-marine-950 py-24 sm:py-32">
       <div
         className="absolute inset-0 opacity-60"
         style={{
@@ -36,7 +36,7 @@ export function CtaSection() {
         <Reveal delay={0.24}>
           <Link
             href="/checkout"
-            className="mt-10 inline-flex rounded-full bg-cream-50 px-8 py-4 font-sans text-sm font-medium tracking-wide text-coffee-900 transition-transform duration-300 hover:-translate-y-0.5"
+            className="mt-10 inline-flex rounded-full bg-cream-50 px-8 py-4 font-sans text-sm font-medium tracking-wide text-marine-900 transition-transform duration-300 hover:-translate-y-0.5"
           >
             Finalizar assinatura
           </Link>

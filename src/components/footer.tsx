@@ -31,12 +31,12 @@ const socials = ["Instagram", "Facebook", "WhatsApp"];
 
 export function Footer() {
   return (
-    <footer className="border-t border-coffee-900/10 bg-cream-50">
+    <footer className="border-t border-marine-900/10 bg-cream-50">
       <div className="mx-auto max-w-content px-6 py-16 sm:px-8 lg:px-10">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Logo />
-            <p className="mt-4 max-w-xs font-sans text-sm leading-relaxed text-coffee-700">
+            <p className="mt-4 max-w-xs font-sans text-sm leading-relaxed text-marine-700">
               Café especial selecionado e entregue todos os meses. Um ritual
               de descoberta, da origem até a sua xícara.
             </p>
@@ -44,7 +44,7 @@ export function Footer() {
 
           {columns.map((column) => (
             <div key={column.title}>
-              <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-coffee-500">
+              <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-marine-500">
                 {column.title}
               </h3>
               <ul className="mt-4 flex flex-col gap-3">
@@ -52,7 +52,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="font-sans text-sm text-coffee-700 transition-colors hover:text-coffee-900"
+                      className="font-sans text-sm text-marine-700 transition-colors hover:text-marine-900"
                     >
                       {link.label}
                     </Link>
@@ -63,8 +63,8 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col gap-6 border-t border-coffee-900/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-sans text-xs text-coffee-500">
+        <div className="mt-14 flex flex-col gap-6 border-t border-marine-900/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-sans text-xs text-marine-500">
             © {new Date().getFullYear()} Marins Cafés. Todos os direitos reservados.
           </p>
           <div className="flex gap-5">
@@ -72,7 +72,7 @@ export function Footer() {
               <a
                 key={social}
                 href="#"
-                className="font-sans text-xs uppercase tracking-wide text-coffee-500 transition-colors hover:text-coffee-900"
+                className="font-sans text-xs uppercase tracking-wide text-marine-500 transition-colors hover:text-marine-900"
                 aria-label={social}
               >
                 {social}

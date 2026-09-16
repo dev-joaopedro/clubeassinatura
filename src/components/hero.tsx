@@ -1,8 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+
+import heroPhoto from "../../public/photos/marins-reserva-caramelo.png";
 
 const container = {
   hidden: {},
@@ -27,20 +30,28 @@ export function Hero() {
     <section
       id="inicio"
       ref={ref}
-      className="relative flex min-h-[100svh] items-end overflow-hidden bg-coffee-950"
+      className="relative flex min-h-[100svh] items-end overflow-hidden bg-marine-950"
     >
       <motion.div style={{ y: backgroundY }} className="absolute inset-0">
+        <Image
+          src={heroPhoto}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(circle at 30% 30%, rgba(201,160,102,0.18), transparent 55%), radial-gradient(circle at 75% 70%, rgba(90,58,32,0.5), transparent 60%), linear-gradient(180deg, #241609 0%, #331f10 55%, #241609 100%)",
+              "radial-gradient(circle at 30% 30%, rgba(12,41,68,0.35), transparent 55%), linear-gradient(180deg, rgba(8,24,38,0.55) 0%, rgba(8,24,38,0.7) 55%, rgba(8,24,38,0.94) 100%)",
           }}
         />
         <div className="absolute inset-0 opacity-[0.06] [background-image:repeating-radial-gradient(circle_at_center,#fff_0,transparent_1px)] [background-size:4px_4px]" />
       </motion.div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-coffee-950 via-coffee-950/30 to-coffee-950/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-marine-950 via-marine-950/40 to-transparent" />
 
       <motion.div
         style={{ opacity: contentOpacity }}
@@ -76,7 +87,7 @@ export function Hero() {
         <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-4">
           <Link
             href="#clube"
-            className="rounded-full bg-cream-50 px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-coffee-900 transition-transform duration-300 hover:-translate-y-0.5"
+            className="rounded-full bg-cream-50 px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-marine-900 transition-transform duration-300 hover:-translate-y-0.5"
           >
             Conheça o clube
           </Link>

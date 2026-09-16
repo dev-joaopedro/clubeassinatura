@@ -54,7 +54,7 @@ export function Navbar() {
 
         <ul
           className={`hidden items-center gap-8 font-sans text-sm tracking-wide md:flex ${
-            scrolled ? "text-coffee-800" : "text-cream-50"
+            scrolled ? "text-marine-800" : "text-cream-50"
           }`}
         >
           {navItems.map((item) => (
@@ -73,8 +73,8 @@ export function Navbar() {
           href="/checkout"
           className={`hidden rounded-full px-5 py-2.5 font-sans text-sm font-medium tracking-wide transition-transform duration-300 hover:-translate-y-0.5 md:inline-block ${
             scrolled
-              ? "bg-coffee-900 text-cream-50"
-              : "bg-cream-50 text-coffee-900"
+              ? "bg-marine-900 text-cream-50"
+              : "bg-cream-50 text-marine-900"
           }`}
         >
           Assinar agora
@@ -86,7 +86,7 @@ export function Navbar() {
           aria-expanded={menuOpen}
           aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
           className={`flex h-10 w-10 items-center justify-center rounded-full md:hidden ${
-            scrolled || menuOpen ? "text-coffee-900" : "text-cream-50"
+            scrolled || menuOpen ? "text-marine-900" : "text-cream-50"
           }`}
         >
           <span className="relative block h-4 w-5">
@@ -116,15 +116,15 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="border-t border-coffee-900/10 bg-cream-50 px-6 pb-8 pt-4 md:hidden"
+            className="border-t border-marine-900/10 bg-cream-50 px-6 pb-8 pt-4 md:hidden"
           >
-            <ul className="flex flex-col gap-1 font-sans text-base text-coffee-900">
+            <ul className="flex flex-col gap-1 font-sans text-base text-marine-900">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
-                    className="block rounded-lg px-2 py-3 transition-colors hover:bg-coffee-900/5"
+                    className="block rounded-lg px-2 py-3 transition-colors hover:bg-marine-900/5"
                   >
                     {item.label}
                   </Link>
@@ -134,7 +134,7 @@ export function Navbar() {
             <Link
               href="/checkout"
               onClick={() => setMenuOpen(false)}
-              className="mt-4 block rounded-full bg-coffee-900 px-5 py-3 text-center font-sans text-sm font-medium text-cream-50"
+              className="mt-4 block rounded-full bg-marine-900 px-5 py-3 text-center font-sans text-sm font-medium text-cream-50"
             >
               Assinar agora
             </Link>

@@ -5,14 +5,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        coffee: {
-          950: "#241609",
-          900: "#331f10",
-          800: "#432a17",
-          700: "#5a3a20",
-          600: "#74502c",
-          500: "#8f6640",
-          400: "#a9805a",
+        // Extraído por amostragem de pixel de imagens/logo.png (marca oficial Marins Cafés).
+        marine: {
+          950: "#081826",
+          900: "#0c2944",
+          800: "#173653",
+          700: "#224564",
+          600: "#345875",
+          500: "#4d6f8a",
+          400: "#7695a8",
         },
         cream: {
           50: "#fdfaf5",
@@ -21,8 +22,8 @@ const config: Config = {
           300: "#e6d3b4",
         },
         gold: {
-          500: "#b6894a",
-          400: "#c9a066",
+          500: "#c9a03e",
+          400: "#dbb968",
         },
       },
       fontFamily: {

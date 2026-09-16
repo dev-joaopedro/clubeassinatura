@@ -60,7 +60,7 @@ export default function CheckoutPage() {
   if (!plan) {
     return (
       <div className="flex min-h-[60svh] items-center justify-center px-6 pt-32">
-        <p className="font-sans text-sm text-coffee-600">Carregando...</p>
+        <p className="font-sans text-sm text-marine-600">Carregando...</p>
       </div>
     );
   }
@@ -99,13 +99,13 @@ export default function CheckoutPage() {
   return (
     <div className="min-h-screen bg-cream-100 pb-24 pt-32 sm:pt-36">
       <div className="mx-auto max-w-content px-6 sm:px-8 lg:px-10">
-        <p className="font-sans text-xs uppercase tracking-[0.35em] text-coffee-500">
+        <p className="font-sans text-xs uppercase tracking-[0.35em] text-marine-500">
           Clube Marins Cafés
         </p>
-        <h1 className="mt-3 font-serif text-3xl text-coffee-900 sm:text-4xl">
+        <h1 className="mt-3 font-serif text-3xl text-marine-900 sm:text-4xl">
           Finalize sua assinatura
         </h1>
-        <p className="mt-3 max-w-lg font-sans text-sm text-coffee-600">
+        <p className="mt-3 max-w-lg font-sans text-sm text-marine-600">
           Revise seu plano, informe seus dados e escolha como prefere pagar.
           Nesta demonstração, nenhum pagamento real é processado.
         </p>
@@ -124,13 +124,13 @@ export default function CheckoutPage() {
             <button
               type="submit"
               disabled={isProcessing}
-              className="w-full rounded-full bg-coffee-900 px-8 py-4 text-center font-sans text-sm font-medium tracking-wide text-cream-50 transition-transform duration-300 hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
+              className="w-full rounded-full bg-marine-900 px-8 py-4 text-center font-sans text-sm font-medium tracking-wide text-cream-50 transition-transform duration-300 hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
             >
               Continuar para pagamento
             </button>
             <Link
               href="/#planos"
-              className="text-center font-sans text-xs text-coffee-500 underline-offset-4 hover:underline"
+              className="text-center font-sans text-xs text-marine-500 underline-offset-4 hover:underline"
             >
               Trocar de plano
             </Link>

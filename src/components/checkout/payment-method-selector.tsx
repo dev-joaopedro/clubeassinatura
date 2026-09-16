@@ -13,9 +13,9 @@ interface PaymentMethodSelectorProps {
 
 export function PaymentMethodSelector({ value, onChange }: PaymentMethodSelectorProps) {
   return (
-    <div className="rounded-2xl border border-coffee-900/10 bg-white p-6 sm:p-8">
-      <h2 className="font-serif text-xl text-coffee-900">Pagamento</h2>
-      <p className="mt-1.5 font-sans text-sm text-coffee-600">
+    <div className="rounded-2xl border border-marine-900/10 bg-white p-6 sm:p-8">
+      <h2 className="font-serif text-xl text-marine-900">Pagamento</h2>
+      <p className="mt-1.5 font-sans text-sm text-marine-600">
         Processado com segurança pelo Mercado Pago.
       </p>
 
@@ -31,26 +31,26 @@ export function PaymentMethodSelector({ value, onChange }: PaymentMethodSelector
               onClick={() => onChange(method.id)}
               className={`rounded-xl border p-4 text-left transition-colors duration-300 ${
                 selected
-                  ? "border-coffee-900 bg-coffee-900/[0.03]"
-                  : "border-coffee-900/12 hover:border-coffee-900/30"
+                  ? "border-marine-900 bg-marine-900/[0.03]"
+                  : "border-marine-900/12 hover:border-marine-900/30"
               }`}
             >
               <span
                 className={`flex h-4 w-4 items-center justify-center rounded-full border ${
-                  selected ? "border-coffee-900" : "border-coffee-900/30"
+                  selected ? "border-marine-900" : "border-marine-900/30"
                 }`}
                 aria-hidden="true"
               >
-                {selected && <span className="h-2 w-2 rounded-full bg-coffee-900" />}
+                {selected && <span className="h-2 w-2 rounded-full bg-marine-900" />}
               </span>
-              <p className="mt-3 font-sans text-sm font-medium text-coffee-900">{method.label}</p>
-              <p className="mt-0.5 font-sans text-xs text-coffee-500">{method.description}</p>
+              <p className="mt-3 font-sans text-sm font-medium text-marine-900">{method.label}</p>
+              <p className="mt-0.5 font-sans text-xs text-marine-500">{method.description}</p>
             </button>
           );
         })}
       </div>
 
-      <p className="mt-5 font-sans text-xs leading-relaxed text-coffee-500">
+      <p className="mt-5 font-sans text-xs leading-relaxed text-marine-500">
         Esta é uma demonstração — nenhum dado de cartão é coletado ou processado
         nesta etapa.
       </p>

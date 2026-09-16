@@ -1,19 +1,35 @@
+import Image, { type StaticImageData } from "next/image";
+
 interface CoffeeVisualProps {
   className?: string;
   variant?: "hero" | "panel" | "card";
   label?: string;
+  src?: StaticImageData;
 }
 
 /**
- * Placeholder visual em CSS para os espaços reservados a fotografia
- * real (grãos, extração, xícara, origem). Substituir por
- * `next/image` assim que houver imagens/vídeo da Marins Cafés —
- * a marcação e o aspect-ratio já estão prontos para receber mídia real.
+ * Sem `src`, renderiza um placeholder em CSS para os espaços ainda
+ * sem fotografia real. Com `src` (ver public/photos), exibe a foto
+ * real da campanha Marins Cafés com o mesmo enquadramento/cantos.
  */
-export function CoffeeVisual({ className = "", variant = "panel", label }: CoffeeVisualProps) {
+export function CoffeeVisual({ className = "", variant = "panel", label, src }: CoffeeVisualProps) {
+  if (src) {
+    return (
+      <div className={`relative overflow-hidden rounded-[1.5rem] ${className}`}>
+        <Image
+          src={src}
+          alt={label ?? "Fotografia de café especial Marins Cafés"}
+          fill
+          sizes="(min-width: 1024px) 40vw, 90vw"
+          className="object-cover"
+        />
+      </div>
+    );
+  }
+
   return (
     <div
-      className={`relative overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-coffee-800 via-coffee-700 to-coffee-900 ${className}`}
+      className={`relative overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-marine-800 via-marine-700 to-marine-900 ${className}`}
       role="img"
       aria-label={label ?? "Fotografia de café especial Marins Cafés"}
     >
